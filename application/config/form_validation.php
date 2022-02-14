@@ -196,7 +196,7 @@ $config = array(
         array(
             'field' => 'nominal',
             'label' => 'Nominal',
-            'rules' => 'required|trim|numeric|strip_tags',
+            'rules' => 'required|trim|strip_tags',
             'errors' =>
             array(
                 'required'      => 'Data %s Wajib Diisi.',
