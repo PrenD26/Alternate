@@ -38,7 +38,7 @@ class Profile extends CI_Controller
                 $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
                 if ($this->upload->do_upload('image')) {
                     $old_image = $data['user']['image'];
-                    if ($old_image != 'layla.png') {
+                    if ($old_image != 'layla2.png') {
                         unlink(FCPATH . "assets/avatar/" . $old_image);
                     }
                     $new_image = $this->upload->data('file_name');

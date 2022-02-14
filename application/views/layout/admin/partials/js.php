@@ -1,5 +1,21 @@
 <script>
-    
+  $("body").niceScroll({
+  cursorcolor:"#6777f0",
+  cursorborder:'none',
+  cursorwidth:10,
+  cursorfixedheight:115,
+  cursoropacitymin:0.4,
+  cursorborderradius:6,
+      autohidemode:'leave'
+});
+
+    $(document).scroll(function() {
+  return $(document).scrollTop() > 300 ? $('.ignielToTop').addClass('show') : $('.ignielToTop').removeClass('show')
+  }), $('.ignielToTop').click(function() {
+    return $('html,body').animate({
+      scrollTop: '0'
+    });
+});
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
     });

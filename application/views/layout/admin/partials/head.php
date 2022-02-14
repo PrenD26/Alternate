@@ -11,16 +11,22 @@
 <link rel="stylesheet" href="<?= base_url('assets/stisla') ?>/node_modules/select2/dist/css/select2.min.css">
 <!-- Template CSS -->
 <link rel="stylesheet" href="<?= base_url('assets/stisla') ?>/assets/css/custom.css">
-<link rel="stylesheet" href="<?= base_url('assets/stisla') ?>/assets/css/components.css">
+
 <link rel="stylesheet" href="<?= base_url('assets/stisla') ?>/node_modules/summernote/dist/summernote-bs4.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css">
+<link rel="stylesheet" href="<?= base_url('assets/stisla') ?>/node_modules/fullcalendar/dist/fullcalendar.min.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="<?=base_url('assets/stisla/')?>/assets/css/components.css">
 
 <title>Alternate &raquo; <?= $title ?></title>
 <link rel="shortcut icon" href="<?= base_url('assets/image') ?>/laund.png">
 
 <style>
-    
+   /* Back To Top by igniel.com */
+.ignielToTop {visibility:hidden; width:50px; height:50px; position:fixed; bottom:50px; right: 20px; z-index:99; cursor:pointer; border-radius:100px; opacity:0; -webkit-transform:translateZ(0); transition:all .5s; background:#6777f0 url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center;}
+.ignielToTop:hover {opacity: 1; background:#1d2129 url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center;}
+.ignielToTop.show {visibility:visible; bottom:20px; opacity:1;} 
     td {
         font-weight: 600 !important;
         font-size: 15px !important;

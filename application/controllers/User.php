@@ -108,9 +108,9 @@ class User extends CI_Controller
             redirect('user');
         }
     }
-    public function hapus($id)
+    public function hapus($password)
     {
-        $this->users->hapus($id);
+        $this->users->hapus($password);
         $this->session->set_flashdata('flash', 'Dihapus!');
         redirect('user');
     }

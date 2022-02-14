@@ -50,6 +50,7 @@ class Pelanggan extends CI_Controller
                 'kota' => $this->input->post('kota',true),
                 'date_created' => time(),
                 'edited_at' => time(),
+                'rand' => md5(mt_rand()),
             );
             $this->pelanggan->tambah($data);
             $this->session->set_flashdata('pelanggan', 'Ditambahkan!');
@@ -76,6 +77,7 @@ class Pelanggan extends CI_Controller
                 'nomor_telepon' => $this->input->post('nomor_telepon',true),
                 'kota' => $this->input->post('kota',true),
                 'edited_at' => time(),
+                'rand' => md5(mt_rand()),
             );
             $this->pelanggan->updateData($data);
             $this->session->set_flashdata('pelanggan', 'Diupdate!');
@@ -83,9 +85,9 @@ class Pelanggan extends CI_Controller
         }
     }
 
-    public function hapus($id)
+    public function hapus($rand)
     {
-        $this->pelanggan->hapus($id);
+        $this->pelanggan->hapus($rand);
         $this->session->set_flashdata('pelanggan', 'Dihapus!');
         redirect('pelanggan');
     }

@@ -13,7 +13,9 @@
     if ($content) {
         $this->load->view($content);
     } ?>
+        <div class='ignielToTop'> </div>
     <?php $this->load->view('layout/admin/partials/footer') ?>
+
 </body>
 
 </html>

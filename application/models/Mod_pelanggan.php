@@ -30,9 +30,9 @@ class Mod_pelanggan extends CI_Model
         $this->db->where('id', $data['id']);
         $this->db->update($this->_table, $data);
     }
-    public function hapus($id)
+    public function hapus($rand)
     {
-        return $this->db->delete($this->_table, ['id' => $id]);
+        return $this->db->delete($this->_table, ['rand' => $rand]);
     }
     function cari($id_pelanggan)
     {

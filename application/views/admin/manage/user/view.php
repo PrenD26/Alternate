@@ -1,15 +1,5 @@
 <?php if ($this->session->flashdata('flash')) : ?>
 	<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
-	<!-- <div class="row mt-3">
-	<div class="col">
-		<div class="alert alert-success alert-dismissible fade show" role="alert">
-			Data User <strong>Berhasil</strong> <?= $this->session->flashdata('flash'); ?>
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-	</div>
-</div> -->
 <?php endif ?>
 <section class="section">
 	<div class="section-header">
@@ -20,146 +10,61 @@
 		</div>
 	</div>
 	<div class="section-body">
-		<div class="row sortable-card">
-			<div class="col-12">
-				<div class="card card-primary">
+	<div class="card card-primary">
 					<div class="card-header">
-						<h4>Admin</h4>
+						<h4></h4>
 						<div class="card-header-action">
 							<a href="<?= base_url('user/create') ?> " class="btn btn-icon btn-primary ">Create</a>
 						</div>
 					</div>
-					<div class="collapse show" id="mycard-collapse">
-						<div class="card-body">
-							<div class="table-responsive">
-								<table class="table table-striped" style="width:100%" id="table-3">
-									<thead>
-										<tr>
-											<th>
-												No
-											</th>
-											<th>Kode user</th>
-											<th>Profile</th>
-											<th>Username</th>
-											<th>Nama</th>
-											<th>Last Login</th>
-											<th class="text-center">status</th>
-											<th class="text-center">Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php $no = 1;
-
-										foreach ($user as $usr) : ?>
-											<?php if ($usr->level == "Admin") { ?>
-												<tr>
-													<td><?= $no++ ?></td>
-													<td><?= $usr->kode_user ?></td>
-													<td class="<?php if ($usr->kondisi == '1') {echo ('beep');}else {
+</div>
+	<div class="row">
+		
+	<?php $no = 1;
+									foreach ($user as $usr) : ?>
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="card profile-widget">
+                  <div class="profile-widget-header">
+                    <img alt="image" src="<?= base_url('assets/avatar/') . $usr->image ?>" class="rounded-circle profile-widget-picture ">
+                    <div class="profile-widget-items">
+                      <div class="profile-widget-item">
+                        <div class="profile-widget-item-label <?php if ($usr->kondisi == '1') {echo ('beep');}else {
 														{echo ('boop');}
-													} ?>"> <img alt="image" src="<?= base_url('assets/avatar/') .$usr->image ?>"class="rounded-circle" style="width:45px;height:45px;"></td>
-													<td><?= $usr->username ?></td>
-													<td><?= $usr->nama ?></td>
-													<td><?php $post_date=$usr->last_login;$now = time();echo timespan($post_date, $now) . ' ago'; ?></td>
-													<td class="text-center"> <?php
-															switch ($usr->status) {
-																case 'Active';
-																	echo '<span class="badge badge-primary" style="font-size:14px !important;">Active</span>';
-																	break;
-																case 'Inactive';
-																	echo '<span class="badge badge-danger" style="font-size:14px !important;">Inactive</span>';
-																	break;
-															}
-															?>
-													</td>
-													<td class="text-center">
-														<button data-toggle="modal" data-target="#view<?= $usr->id ?>" class="btn btn-icon btn-primary"><i class="fas fa-eye"></i></button>
-														<a href="<?= base_url('user/update/' . $usr->id) ?> " class="btn btn-icon btn-success "><i class="fas fa-pencil"></i></a>
-														<a href="<?= base_url('user/change/' . $usr->id) ?> " class="btn btn-icon btn-warning "><i class="fas fa-key"></i></a>
-														<a href="<?= base_url('user/hapus/' . $usr->id) ?> " class="btn btn-icon btn-danger tombol-hapus">
-															<i class="fas fa-trash"></i></a>
-
-													</td>
-												</tr>
-											<?php } ?>
-										<?php endforeach ?>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12">
-				<div class="card card-primary">
-					<div class="card-header">
-						<h4>Kasir</h4>
-						<div class="card-header-action">
-							<a href="<?= base_url('user/create') ?> " class="btn btn-icon btn-primary ">Create</a>
-						</div>
-					</div>
-					<div class="collapse show" id="mycard-collapse">
-						<div class="card-body">
-							<div class="table-responsive">
-								<table class="table table-striped" style="width:100%" id="table-2">
-									<thead>
-
-										<tr>
-											<th>
-												No
-											</th>
-											<th>Kode user</th>
-											<th>Profile</th>
-											<th>Username</th>
-											<th>Nama</th>
-											<th>Last Login</th>
-											<th class="text-center">status</th>
-											<th class="text-center">Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php $no = 1;
-										foreach ($user as $usr) : ?>
-											<?php if ($usr->level == "Kasir") { ?>
-												<tr>
-												<td><?= $no++ ?></td>
-													<td><?= $usr->kode_user ?></td>
-													<td class="<?php if ($usr->kondisi == '1') {echo ('beep');}else {
-														{echo ('boop');}
-													} ?>"> <img alt="image" src="<?= base_url('assets/avatar/') .$usr->image ?>"class="rounded-circle" style="width:45px;height:45px;"></td>
-													<td><?= $usr->username ?></td>
-													<td><?= $usr->nama ?></td>
-													<td><?php $post_date=$usr->last_login;$now = time();echo timespan($post_date, $now) . ' ago'; ?></td>
-													<td class="text-center"> <?php
-															switch ($usr->status) {
-																case 'Active';
-																	echo '<span class="badge badge-primary" style="font-size:14px !important;">Active</span>';
-																	break;
-																case 'Inactive';
-																	echo '<span class="badge badge-danger" style="font-size:14px !important;">Inactive</span>';
-																	break;
-															}
-															?>
-													</td>
-													<td class="text-center">
-														<button data-toggle="modal" data-target="#view<?= $usr->id ?>" class="btn btn-icon btn-primary"><i class="fas fa-eye"></i></button>
-														<a href="<?= base_url('user/update/' . $usr->id) ?> " class="btn btn-icon btn-success "><i class="fas fa-pencil"></i></a>
-														<a href="<?= base_url('user/change/' . $usr->id) ?> " class="btn btn-icon btn-warning "><i class="fas fa-key"></i></a>
-														<a href="<?= base_url('user/hapus/' . $usr->id) ?> " class="btn btn-icon btn-danger tombol-hapus">
-															<i class="fas fa-trash"></i></a>
-
-													</td>
-												</tr>
-											<?php } ?>
-										<?php endforeach ?>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+													} ?>">Username</div>
+                        <div class="profile-widget-item-value "><?=$usr->username?></div>
+                      </div>
+                      <div class="profile-widget-item">
+                        <div class="profile-widget-item-label ">Status</div>
+                        <div class="profile-widget-item-value"><?=$usr->status?></div>
+                      </div>
+                      <div class="profile-widget-item">
+                        <div class="profile-widget-item-label">Created At</div>
+                        <div class="profile-widget-item-value"><?=date('d M Y', $usr->date_created)?></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="profile-widget-description pb-0">
+                    <div class="profile-widget-name"><?=$usr->nama?> <div class="text-muted d-inline font-weight-normal"><div class="slash"></div><?=$usr->level?><div class="slash"></div>Last Login : <?php $post_date=$usr->last_login;$now = time();echo timespan($post_date, $now) . ' ago'; ?></div></div>
+                    <p><?=$usr->bio?></p>
+                  </div>
+                  <div class="card-footer text-center pt-0">
+                    <div class="font-weight-bold mb-2 text-small">Action</div>
+					<button data-toggle="modal" data-target="#view<?= $usr->id ?>" class="btn btn-icon btn-primary"><i class="fas fa-eye"></i></button>
+                    <a href="<?= base_url('user/update/' . $usr->id) ?>" class="btn btn-success">
+                      <i class="fas fa-pencil"></i>
+                    </a>
+                    <a href="<?= base_url('user/change/' . $usr->id) ?>" class="btn btn-warning">
+                      <i class="fas fa-key"></i>
+                    </a>
+                    <a href="<?= base_url('user/hapus/' . $usr->password) ?>" class="btn btn-danger tombol-hapus">
+                      <i class="fas fa-trash"></i>
+                    </a>
+                  </div>
+                </div>
+     
+              </div>
+			  <?php endforeach ?>
+            </div>
 	</div>
 
 </section>

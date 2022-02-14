@@ -12,6 +12,9 @@
 <!-- Load Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!-- Load BS4 -->
+<script src="<?= base_url('assets/stisla') ?>/node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="<?=base_url('assets/stisla')?>/assets/js/page/modules-calendar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <!-- Load NiceScroll -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
@@ -32,4 +35,13 @@
 <!-- Template JS File -->
 <script src="<?= base_url('assets/stisla/') ?>/assets/js/scripts.js"></script>
 <script src="<?= base_url('assets/stisla/') ?>/assets/js/custom.js"></script>
+<script src="<?=base_url('assets/stisla/')?>/node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="<?=base_url('assets/stisla/')?>/assets/js/page/modules-calendar.js"></script>
 <?php $this->load->view('layout/admin/partials/js') ?>
+
+  <!-- JS Libraies -->
+  
+
+
+
+  <!-- Page Specific JS File -->

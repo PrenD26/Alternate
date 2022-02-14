@@ -58,7 +58,7 @@
 											<td class="text-center">
 												<button data-toggle="modal" data-target="#view<?= $plg->id ?>" class="btn btn-icon btn-primary"><i class="fas fa-eye"></i></button>
 												<a href="<?= base_url('pelanggan/update/' . $plg->id) ?> " class="btn btn-icon btn-success "><i class="fas fa-pencil"></i></a>
-												<a href="<?= base_url('pelanggan/hapus/' . $plg->id) ?> " class="btn btn-icon btn-danger tombol-hapus">
+												<a href="<?= base_url('pelanggan/hapus/' . $plg->rand) ?> " class="btn btn-icon btn-danger tombol-hapus">
 													<i class="fas fa-trash"></i></a>
 
 											</td>

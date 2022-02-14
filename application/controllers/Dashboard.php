@@ -37,6 +37,13 @@ class Dashboard extends CI_Controller
         ];
         $this->load->view('layout/admin/template', $data);
     }
+    public function calendar(){
+        $data = [
+            'title' => 'Calendar',
+            'content'     => $this->folder . ('calendar'),
+        ];
+        $this->load->view('layout/admin/template',$data);
+    }
 }
 
 /* End of file Dashboard.php */

@@ -5,7 +5,7 @@
             <form class="form-inline mr-auto">
                 <ul class="navbar-nav mr-3">
                     <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-                    <li><a href="#" data-toggle="sidebar" style='font-size:20px; font-weight:700 ;  margin-top:4px; ' class="nav-link nav-link-lg">
+                    <li><a href="<?=base_url('dashboard/calendar')?>" style='font-size:20px; font-weight:700 ;  margin-top:4px; ' class="nav-link nav-link-lg">
                             <span><?php echo date("d/m/Y"); ?></a></li>
                     <li><a href="#" data-toggle="sidebar" style='font-size:20px; padding-left:2px !important; font-weight:700 ; margin-top:4px;' class="nav-link nav-link-lg">
                             <span id="jamServer"><?php echo date("H:i:s"); ?></span></a></li>
